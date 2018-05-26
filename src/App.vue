@@ -2,17 +2,17 @@
     <div id="app">
         <div class="content">
             <div class="header">
-                <p style="color:transparent">{{windowWidth}}</p>
-                <img v-if="windowWidth > 667" :src="require('./assets/title.svg')">
+                <p style="color:#fff">{{isMobileWidth()}}</p>
+                <img v-if="isMobileWidth" :src="require('./assets/title.svg')">
                 <img v-else :src="require('./assets/mobile_title.svg')">
-                <img v-if="windowWidth > 667" :src="require('./assets/sub_title.svg')">
+                <img v-if="isMobileWidth" :src="require('./assets/sub_title.svg')">
                 <img v-else :src="require('./assets/mobile_sub_title.svg')">
-                <img v-if="windowWidth > 667" :src="require('./assets/little_map.svg')">
+                <img v-if="isMobileWidth" :src="require('./assets/little_map.svg')">
                 <img v-else :src="require('./assets/mobile_little_map.svg')">
             </div>
 
             <div class="mainMap">
-                <svg v-if="windowWidth > 667" version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                <svg v-if="isMobileWidth" version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
                     style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
                     <g i:extraneous="self">
@@ -2398,7 +2398,7 @@
                                 v2.3h4.5v-2.3H470z M474.5,707.7v-2.4H470v2.4H474.5z"/>
                         </g>
                     </g>
-                </svg>
+                </svg>            
                 <svg v-else version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1242 2208"
                     style="enable-background:new 0 0 1242 2208;" xml:space="preserve">
@@ -4776,7 +4776,6 @@
                             v-1h12V1302z M126.5,1302h-12v-1h12V1302z"/>
                     </g>
                 </svg>
-
             </div>
         </div>
 
@@ -4818,7 +4817,19 @@ export default {
         },
         getWindowWidth(event) {
             this.windowWidth = document.documentElement.clientWidth;
-        }
+        },
+        isMobileWidth(){
+            var vm = this;
+            try{ 
+                document.createEvent("TouchEvent"); return true; 
+            }catch(e){ 
+                if(vm.windowWidth < 768){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }  
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
