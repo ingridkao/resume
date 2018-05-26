@@ -2,6 +2,7 @@
     <div id="app">
         <div class="content">
             <div class="header">
+                {{windowWidth}}
                 <img v-if="windowWidth > 667" :src="require('./assets/title.svg')">
                 <img v-else :src="require('./assets/mobile_title.svg')">
                 <img v-if="windowWidth > 667" :src="require('./assets/sub_title.svg')">

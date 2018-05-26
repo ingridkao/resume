@@ -28,7 +28,7 @@
             height: 100%;
         }
     }
-    @media only screen and (max-device-height: 667px) and (-webkit-device-pixel-ratio : 2) and (-webkit-device-pixel-ratio : 3) {
+    @media only screen and (max-width: 667px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio : 2) and (-webkit-device-pixel-ratio : 3) {
         /* For mobile phones: */
         .mainMap{
             width: calc(100vw + 1rem);
@@ -37,7 +37,7 @@
             left: -1rem;
         }
     }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 668px) {
         /* For desktop: */
         .mainMap{
             width: calc(100vw - 2rem);
@@ -137,7 +137,7 @@
                 }
             }
         }
-        @media only screen and (max-device-height: 667px) and (-webkit-device-pixel-ratio : 2) and (-webkit-device-pixel-ratio : 3) {
+        @media only screen and (max-width: 667px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio : 2) and (-webkit-device-pixel-ratio : 3) {
             /* For mobile phones: */
             .modal-container {
                 width: 96vw;
@@ -156,7 +156,7 @@
                 }
             }
         }
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 668px) {
             /* For desktop: */
             .modal-container {
                 width: 90vw;
