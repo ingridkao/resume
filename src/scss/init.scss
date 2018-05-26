@@ -28,24 +28,7 @@
             height: 100%;
         }
     }
-    @media only screen and (max-width: 767px) {
-    /* For mobile phones: */
-        .mainMap{
-            width: calc(100vw + 1rem);
-            height: 100vh;
-            top: 0;
-            left: -1rem;
-        }
-    }
-    @media only screen and (min-width: 768px) {
-    /* For desktop: */
-        .mainMap{
-            width: calc(100vw - 2rem);
-            height: calc(100vh + 5rem);
-            top: -10%;
-            left: 0;
-        }
-    }
+
 }
 .modal-mask {
     position: fixed;
@@ -137,45 +120,6 @@
                 }
             }
         }
-        @media only screen and (max-width: 767px) {
-        /* For mobile phones: */
-            .modal-container {
-                width: 96vw;
-                >*{
-                    padding: 0.5rem;
-                }
-                .modal-body{
-                    max-height: calc(100vh - 5rem);
-                    .imgGroup {
-                        height: 50vh;
-                        >p{
-                            width: 100%;
-                        }
-
-                    }
-                }
-            }
-        }
-        @media only screen and (min-width: 768px) {
-            /* For desktop: */
-            .modal-container {
-                width: 90vw;
-                max-width: 70rem;
-                >*{
-                    padding: 1.5rem;
-                }
-                .modal-body{
-                    max-height: calc(100vh - 12rem);
-                    .imgGroup {
-                        height: 60vh;
-                        >p{
-                            width: 50%;
-                            max-width: 35rem;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -218,4 +162,56 @@ svg{
     .svgBtn path{
         cursor: pointer;
     }
+}
+.mobile{
+    .mainMap{
+        width: calc(100vw + 1rem);
+        height: 100vh;
+        top: 0;
+        left: -1rem;
+    }
+    .modal-container {
+        width: 96vw;
+        >*{
+            padding: 0.5rem;
+        }
+        .modal-body{
+            max-height: calc(100vh - 5rem);
+            .imgGroup {
+                height: 50vh;
+                >p{
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+
+}
+
+.destop{
+    .mainMap{
+        width: calc(100vw - 2rem);
+        height: calc(100vh + 5rem);
+        top: -10%;
+        left: 0;
+    }
+    .modal-container {
+        width: 90vw;
+        max-width: 70rem;
+        >*{
+            padding: 1.5rem;
+        }
+        .modal-body{
+            max-height: calc(100vh - 12rem);
+            .imgGroup {
+                height: 60vh;
+                >p{
+                    width: 50%;
+                    max-width: 35rem;
+                }
+            }
+        }
+    }
+
 }
