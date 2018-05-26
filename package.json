@@ -1,6 +1,6 @@
 {
   "name": "new-taipei-path",
-  "description": "A Vue.js project",
+  "description": "New taipei path project",
   "version": "1.0.0",
   "author": "ingridkao <ingrid7613@gmail.com>",
   "license": "MIT",
@@ -31,5 +31,7 @@
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
-  }
+  },
+  "main": "",
+  "repository": ""
 }

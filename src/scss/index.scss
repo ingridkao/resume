@@ -1,0 +1,44 @@
+@import "common";
+* {
+    margin: 0;
+    padding: 0;
+}
+#app {
+    font-family: Microsoft JhengHei, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $whiteColor;
+    background: $mainGradient;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 0.5rem;
+    
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #app{
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    #app{
+        overflow: hidden;
+    }
+}
+a{
+    text-decoration:none;
+    color:darken($greenColor, 15);
+    &:hover{
+        text-decoration:none;
+        color:darken($greenColor, 5);
+    }
+}
+
+button{
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}

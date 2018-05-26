@@ -5,6 +5,7 @@ module.exports = {
   entry: [
     './src/main.js',
     './src/scss/init.scss',
+    './src/scss/index.scss',
   ],
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -17,7 +18,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
         ],
       },
       {
