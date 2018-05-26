@@ -2,16 +2,16 @@
     <div id="app">
         <div class="content">
             <div class="header">
-                <img v-if="windowWidth > 768" :src="require('./assets/title.svg')">
+                <img v-if="windowWidth > 667" :src="require('./assets/title.svg')">
                 <img v-else :src="require('./assets/mobile_title.svg')">
-                <img v-if="windowWidth > 768" :src="require('./assets/sub_title.svg')">
+                <img v-if="windowWidth > 667" :src="require('./assets/sub_title.svg')">
                 <img v-else :src="require('./assets/mobile_sub_title.svg')">
-                <img v-if="windowWidth > 768" :src="require('./assets/little_map.svg')">
+                <img v-if="windowWidth > 667" :src="require('./assets/little_map.svg')">
                 <img v-else :src="require('./assets/mobile_little_map.svg')">
             </div>
 
             <div class="mainMap">
-                <svg v-if="windowWidth > 768" version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                <svg v-if="windowWidth > 667" version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
                     style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
                     <g i:extraneous="self">
