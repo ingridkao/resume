@@ -4776,8 +4776,21 @@
                         </g>
                     </g>
                 </svg>
-
             </div>
+
+            <div class="socialLink">
+                <a class="web" href="https://theinitium.com/" target="_blank">端傳媒</a> | 
+                <a class="facebook" href="https://www.facebook.com/theinitium/" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a class="twitter" href="https://twitter.com/initiumnews/" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a class="instagram" href="https://www.instagram.com/initiumphoto/" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+
         </div>
 
         <vueDialog
@@ -4790,6 +4803,7 @@
 </template>
 <script>
 import vueDialog from "./dialog.vue";
+import _ from 'lodash';
 
 export default {
     name: 'app',
@@ -4801,12 +4815,16 @@ export default {
         }
     },
     mounted() {
-        this.$nextTick(function() {
-            window.addEventListener('resize', this.getWindowWidth);
+        const vm = this;
+        window.onresize = _.debounce(() => {
+            vm.getWindowWidth();
+        }, 400)
 
-            //Init
-            this.getWindowWidth()
-        })
+        // this.$nextTick(function() {
+        //     window.addEventListener('resize', this.getWindowWidth);
+        //     //Init
+        //     this.getWindowWidth()
+        // })
     },
     components:{
         vueDialog 

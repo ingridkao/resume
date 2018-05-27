@@ -6,10 +6,13 @@
                     <div class="modal-container">
                         <div class="modal-header">
                             <h3 class="title">{{ displayTitle }}</h3>
-                            <button class="closeBtn" @click="closedialog"></button></button>
+                            <button class="closeBtn" @click="closedialog">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
                         </div>
 
                         <div class="modal-body">
+                            <iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=121.83258357588785%2C25.079819843048295%2C121.84644523207682%2C25.091888136619303&amp;layer=cyclemap"></iframe>
                             <div class="imgGroup" v-for="(pic, index) in displayImg" :class="'direction' + imgdirection[index]">
                                 <transition name="fade">
                                     <img :src="pic" v-on:load="imgOnLoaded" v-show="imgLoaded"/>

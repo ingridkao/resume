@@ -3,12 +3,8 @@
     margin: 0;
     padding: 0;
 }
-body{
-    font-family: Microsoft JhengHei, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-}
-
 #app {
+    font-family: Microsoft JhengHei, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $whiteColor;
@@ -20,9 +16,21 @@ body{
     &.mobile{
         overflow-x: hidden;
         overflow-y: scroll;
+        .socialLink{
+            padding-top: 22%;
+            left: 7vw;
+            top: 0;
+            font-size: 1.5rem;
+            height: 100vh;
+        }
     }
     &.destop{
         overflow: hidden;
+        .socialLink{
+            right: 1.5em;
+            bottom: 0.5em;
+            font-size: 14px;
+        }
     }  
 }
 a{
@@ -38,4 +46,16 @@ button{
     border: 0;
     outline: none;
     cursor: pointer;
+}
+
+.socialLink{
+    position: absolute;
+    z-index: 1;
+    >a{
+        margin: 0 .25rem;
+        color:rgba($whiteColor, .9);
+        &:hover{
+            color:rgba($whiteColor, 1);
+        }
+    }
 }
