@@ -63,8 +63,6 @@
                     border-radius: 50%;
                     width: 2rem;
                     height: 2rem;
-                    top: 0.25rem;
-                    right: 0.5rem;
                     background: transparent;
                 }
             }
@@ -72,17 +70,26 @@
                 overflow-y: scroll;
                 .imgGroup {
                     text-align: center;
-                    >*{
-                        margin: 0 auto;
+                    &.direction0{
+                        margin-bottom: 3rem;
+                        >img{
+                            height: 100%;
+                        }
                     }
+                    &.direction1{
+                        >img{
+                            width: 100%;
+                        }
+
+                    }
+    
                     > img {
-                        height: 85%;
+                        margin: 0 auto;    
                     }
                     >p{
                         position: relative;
-                        color: lighten($blackColor, 35);
-                        font-size: 0.45rem;
-                        margin-bottom: 1rem;
+                        color: lighten($blackColor, 20);
+                        font-size: 0.6rem;
                         >span{
                             display: block;
                             color: lighten($blackColor, 50);
@@ -93,12 +100,13 @@
                 .textGroup {
                     width: 90%;
                     max-width: 30rem;
-                    margin: auto;
+                    margin: 1rem auto;
                     p{
                         color: $blackColor;
-                        margin: 1rem auto;
+                        margin: 1rem auto 1.5rem auto;
                         text-indent: 2rem;
-                        line-height: 160%;
+                        line-height: 170%;
+                        font-size: 1rem;
                     }
                 }
                 .subTextGroup{
@@ -106,15 +114,14 @@
                     border: 1px dashed $goldenColor;
                     padding: .5rem;
                     max-width: 30rem;
-                    margin: 0 auto 1rem auto;
+                    margin: 1rem auto;
 
                     h6{
                         color: lighten($blackColor, 40);
-                        font-size: .8rem;
+                        font-size: .75rem;
                     }
                     p{
                         color: $blackColor;
-                        font-size: .6rem;
                         margin: .5rem;
                     }
                 }
@@ -132,10 +139,10 @@
     &:after {
         content: "✖";
         font-size: 1.5rem;
-        color: lighten($redColor, 5);
+        color: darken($greenColor, 10);
     }
     &:hover:after {
-        color: $redColor;
+        color: darken($greenColor, 5);
     }
 }
 
@@ -175,14 +182,24 @@ svg{
         >*{
             padding: 0.5rem;
         }
+        .closeBtn{
+            top: .5rem;
+            right: .5rem; 
+        }
         .modal-body{
             max-height: calc(100vh - 5rem);
             .imgGroup {
-                height: 50vh;
+                &.direction0{
+                    height: 45vh;
+                    
+                }
+                &.direction1{
+                    height: 55vh;
+                }
                 >p{
                     width: 100%;
+                    margin: 0 auto 0.5rem auto;
                 }
-
             }
         }
     }
@@ -198,20 +215,75 @@ svg{
     }
     .modal-container {
         width: 90vw;
-        max-width: 70rem;
+        max-width: 60rem;
         >*{
-            padding: 1.5rem;
+            padding: 1rem;
+        }
+        .closeBtn{
+            top: 1rem;
+            right: 1rem; 
         }
         .modal-body{
             max-height: calc(100vh - 12rem);
             .imgGroup {
-                height: 60vh;
+                &.direction0{
+                    height: 60vh;
+                    >p{
+                        width: 90%;
+                        margin: 0 auto 1rem auto;
+                    }
+                }
+                &.direction1{
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 37%;
+                    &:nth-child(2n+1){
+                        margin: 0 1% 0 12%;
+                    }
+                    &:nth-child(2n){
+                        margin: 0 auto 0 1%;
+                    }
+                    >p{
+                        width: 100%;
+                        margin: 0 auto 1rem auto;
+                    }
+                }
+                &.direction2{
+                    display: inline-block;
+                    vertical-align: top;
+                    &:nth-child(2n){
+                        width: 25%;
+                        margin: 0 1% 0 14%;
+                    }
+                    &:nth-child(2n+1){
+                        width: 45%;
+                        margin: 0 auto 0 1%;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                    >p{
+                        width: 100%;
+                        margin: 0 auto 1rem auto;
+                    }
+                }
+
                 >p{
-                    width: 50%;
-                    max-width: 35rem;
+                    margin: 0 auto 1rem auto;
                 }
             }
         }
     }
+}
 
+.fade-enter-active {
+    transition: opacity 3s ease-in-out;
+}
+
+.fade-enter-to {
+    opacity: 1;
+}
+
+.fade-enter {
+    opacity: 0;
 }
