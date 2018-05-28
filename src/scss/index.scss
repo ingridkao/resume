@@ -34,19 +34,36 @@
     &.destop{
         overflow: hidden;
         .socialLink{
-            width: 20vw;
-            right: 1em;
-            bottom: 1em;
-            font-size: 18px;
             text-align: right;
-            >a{
-                margin: 0 .25rem;
-                &.facebook{
-                    margin-left: 5%;
+            font-size: 18px;
+        }
+        &.lg{
+            .socialLink{
+                width: 20vw;
+                right: 1em;
+                bottom: 1em;
+                >a{
+                    margin: 0 .25em;
+                    &.facebook{
+                        margin-left: 5%;
+                    }
                 }
             }
         }
-    }  
+        &.sm{
+            .socialLink{
+                width: 100vw;
+                right: .5em;
+                bottom: .5em;
+                >a{
+                    margin-left: .25em;
+                    &.facebook{
+                        margin-left: .5em;
+                    }
+                }
+            }
+        }
+    }
 }
 a{
     text-decoration:none;

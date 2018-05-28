@@ -1,12 +1,12 @@
 <template>
-    <div id="app" :class="{ mobile: isMobileWidth(), destop: !(isMobileWidth()) }">
+    <div id="app" :class="rwdClass">
         <div class="content">
             <div class="header">
                 <!--<p>{{isMobileWidth()}}</p>-->
-                <img v-if="isMobileWidth()" :src="require('./assets/mobile_title.svg')">
-                <img v-else :src="require('./assets/title.svg')">
-                <img v-if="isMobileWidth()" :src="require('./assets/mobile_sub_title.svg')">
-                <img v-else :src="require('./assets/sub_title.svg')">
+                <img class="main_title" v-if="isMobileWidth()" :src="require('./assets/mobile_title.svg')">
+                <img class="main_title" v-else :src="require('./assets/title.svg')">
+                <img class="sub_title" v-if="isMobileWidth()" :src="require('./assets/mobile_sub_title.svg')">
+                <img class="sub_title" v-else :src="require('./assets/sub_title.svg')">
                 <img v-if="isMobileWidth()" :src="require('./assets/mobile_little_map.svg')">
                 <img v-else :src="require('./assets/little_map.svg')">
             </div>
@@ -4813,19 +4813,20 @@ export default {
         return {
             showModal: false,
             dialogType: '',
-            windowWidth: 0
+            windowWidth: 0,
+            rwdClass:''
         }
     },
     mounted() {
         const vm = this;
+        vm.$nextTick(function() {
+            //Init
+            vm.getWindowWidth()
+        });   
+
         window.onresize = _.debounce(() => {
             vm.getWindowWidth();
         }, 400)
-
-        this.$nextTick(function() {
-            //Init
-            this.getWindowWidth()
-        })
     },
     components:{
         vueDialog 
@@ -4837,11 +4838,21 @@ export default {
         },
         getWindowWidth(event) {
             this.windowWidth = document.documentElement.clientWidth;
+            if(this.windowWidth < 768){
+                this.rwdClass = 'destop sm';
+            }else{
+                this.rwdClass = 'destop lg';
+            }
+            this.isMobileWidth();
+
         },
         isMobileWidth(){
             var vm = this;
             try{ 
-                document.createEvent("TouchEvent"); return true; 
+                if(document.createEvent("TouchEvent")){
+                    vm.rwdClass = 'mobile';
+                    return true; 
+                }
             }catch(e){ 
                 if(vm.windowWidth < 768){
                     return true;
@@ -4852,7 +4863,8 @@ export default {
         }  
     },
     beforeDestroy() {
-        window.removeEventListener('resize', this.getWindowWidth);
+        //window.removeEventListener('resize', this.getWindowWidth);
+        window.onresize = null;
     }
 };
 </script>

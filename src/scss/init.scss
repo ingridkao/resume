@@ -71,6 +71,22 @@
             }
             .modal-body {
                 overflow-y: scroll;
+                .info{
+                    box-sizing: border-box;
+                    border: 1px dashed $goldenColor;
+                    padding: .5em;
+                    color: lighten($blackColor, 40);
+                    span{
+                        margin: 0 .5em;
+                        color: $blackColor;
+                        &.level0{
+                            color: $redColor;
+                        }
+                        &.level4{
+                            color: $greenColor;
+                        }
+                    }
+                }
                 .imgGroup {
                     text-align: center;
                     margin: 0 auto;    
@@ -135,9 +151,9 @@
 
 svg{
     .st0{fill:#C69C6D;}
-	.st1{fill:#FF00FF;}
-	.st2{fill:#FFFFFF;}
-    .st3{fill:#00FF00;}
+	.st1{fill:$purpleColor;}
+	.st2{fill:$whiteColor;}
+    .st3{fill:$uniqGreen;}
     .svgBtn,
     .svgBtn path{
         cursor: pointer;
@@ -165,8 +181,8 @@ svg{
         }
         .modal-body{
             max-height: calc(100vh - 4em);
-            iframe{
-                margin-bottom: 2rem;
+            iframe,
+            .leaflet-container{
                 height: 26vh;
             }
             .imgGroup {
@@ -202,14 +218,20 @@ svg{
                 margin: 2em auto;
 
             }
-            .subTextGroup{
+            .subTextGroup,
+            .info{
                 width: 92%;
                 margin: 1em auto 3em auto;;
             }
 
         }
     }
-
+    .leaflet-touch .leaflet-bar a{
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        font-size: 3em;
+    }
 }
 
 .destop{
@@ -236,33 +258,25 @@ svg{
         }
         .modal-body{
             max-height: calc(100vh - 6em);
-            iframe{
-                margin-bottom: 2rem;
+            iframe,
+            .leaflet-container{
                 height: 18rem;
             }
             .imgGroup {
                 &.direction0{
-                    height: 60vh;
                     margin-bottom: 3em;
-                    >p{
-                        margin: 0 auto 1em auto;
-                    }
                     >img{
                         height: 100%;
+                    }
+                    >p{
+                        margin: 0 auto 1em auto;
                     }
                 }
                 &.direction1{
                     display: inline-block;
                     vertical-align: top;
-                    width: 37%;
                     img{
                         width: 100%;
-                    }
-                    &:nth-child(2n+1){
-                        margin: 0 10% 0 2%;
-                    }
-                    &:nth-child(2n){
-                        margin: 0 2% 0 10%;
                     }
                     >p{
                         width: 100%;
@@ -302,15 +316,75 @@ svg{
                 font-size: 0.9em;
                 margin: 1em auto;
             }
-            .subTextGroup{
+            .subTextGroup,
+            .info{
                 max-width: 36em;
                 width: 92%;
-                margin: 2em auto 4em auto;;
+                margin: 1em auto 2em auto;;
             }
         }
     }
 }
 
+.destop.lg{
+    .imgGroup {
+        &.direction0{
+            height: 60vh;
+        }
+        &.direction1{
+            width: 37%;
+            &:nth-child(2n+1){
+                margin: 0 10% 0 2%;
+            }
+            &:nth-child(2n){
+                margin: 0 2% 0 10%;
+            }
+        }
+        &.direction2{
+            &:nth-child(2n){
+                width: 25%;
+                margin: 0 1% 0 14%;
+            }
+            &:nth-child(2n+1){
+                width: 45%;
+                margin: 0 1% 0 14%;
+            }
+        }
+    }
+}
+
+.destop.sm{
+    .main_title{
+        opacity: .8;
+    }
+    .sub_title{
+        opacity: .5;
+    }
+    .imgGroup {
+        &.direction0{
+            height: 45vh;
+        }
+        &.direction1{
+            width: 43%;
+            &:nth-child(2n+1){
+                margin: 0 5% 0 2%;
+            }
+            &:nth-child(2n){
+                margin: 0 2% 0 5%;
+            }
+        }
+        &.direction2{
+            &:nth-child(2n){
+                width: 25%;
+                margin: 0 1% 0 14%;
+            }
+            &:nth-child(2n+1){
+                width: 45%;
+                margin: 0 1% 0 14%;
+            }
+        }
+    }
+}
 .fade-enter-active {
     transition: opacity 3s ease-in-out;
 }
@@ -321,4 +395,15 @@ svg{
 
 .fade-enter {
     opacity: 0;
+}
+
+.leaflet-touch .leaflet-bar a{
+    color:$greenColor;
+}
+
+.leaflet-interactive { 
+    stroke: $pathColor;
+    fill: none;
+    // stroke-dasharray: 8,6; 
+    stroke-width: 4;  
 }
