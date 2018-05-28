@@ -17,19 +17,34 @@
         overflow-x: hidden;
         overflow-y: scroll;
         .socialLink{
+            width: 26vw;
+            height: 10vh;
             padding-top: 22%;
             left: 7vw;
             top: 0;
-            font-size: 1.5rem;
-            height: 100vh;
+            font-size: 32px;
+            >a{
+                margin: 0;
+                &.facebook{
+                    margin-left: 10%;
+                }
+            }
         }
     }
     &.destop{
         overflow: hidden;
         .socialLink{
-            right: 1.5em;
-            bottom: 0.5em;
-            font-size: 14px;
+            width: 20vw;
+            right: 1em;
+            bottom: 1em;
+            font-size: 18px;
+            text-align: right;
+            >a{
+                margin: 0 .25rem;
+                &.facebook{
+                    margin-left: 5%;
+                }
+            }
         }
     }  
 }
@@ -50,12 +65,27 @@ button{
 
 .socialLink{
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     >a{
-        margin: 0 .25rem;
-        color:rgba($whiteColor, .9);
+        display: inline-block;
+        vertical-align: top;
+        width: 1.5em;
+        color:rgba($whiteColor, .8);
         &:hover{
             color:rgba($whiteColor, 1);
+        }
+        &.web{
+            width: 1.5em;
+            height: 1.5em;
+            letter-spacing: .25em;
+            svg{
+                fill:rgba($whiteColor, .8);
+            }
+            &:hover{
+                svg{
+                    fill:rgba($whiteColor, 1);
+                }             
+            }
         }
     }
 }

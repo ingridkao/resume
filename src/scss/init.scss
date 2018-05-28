@@ -55,14 +55,12 @@
             .modal-header {
                 background: $mainGradient;
                 border-radius: 0.25rem 0.25rem 0 0;
-                font-size: 16px;
-                padding: .5em;
+                padding: .5em 0 .5em 2em;
                 h3 {
                     color: $whiteColor;
                 }
                 .closeBtn {
                     position: absolute;
-                    right: 1em;
                     border-radius: 50%;
                     background: transparent;
                     color: darken($greenColor, 10);
@@ -78,22 +76,19 @@
                     margin: 0 auto;    
                     >p{
                         position: relative;
-                        color: lighten($blackColor, 20);
-                        font-size: 14px;
+                        color: lighten($blackColor, 15);
                         >span{
                             display: block;
-                            color: lighten($blackColor, 50);
-                            font-size: 12px;
+                            color: lighten($blackColor, 30);
                         }
                     }
                 }
                 .textGroup {
-                    margin: 1em auto;
+                    line-height: 1.8;
                     p{
                         color: $blackColor;
-                        margin: 1em auto 1.5em auto;
+                        margin: 1.5em auto;
                         text-indent: 2em;
-                        font-size: 1em;
                     }
                 }
                 .subTextGroup{
@@ -107,6 +102,7 @@
                     p{
                         color: $blackColor;
                         margin: .5em;
+                        line-height: 180%;
                     }
                     a{
                         font-weight: bold;
@@ -155,22 +151,23 @@ svg{
         left: -1rem;
     }
     .modal-container {
-        width: 96vw;
-        margin: 1rem auto;
+        width: 100vw;
+        font-size: 22px;
         .modal-header {
             >*{
-                font-size: 2.5em;
+                font-size: 2em;
             }
             .closeBtn{
-                top: 0.25em;
-                font-size: 2.75em;
+                top: 0;
+                right: 0.25em;
+                font-size: 3em;
             }
         }
         .modal-body{
-            max-height: calc(100vh - 5rem);
+            max-height: calc(100vh - 4em);
             iframe{
                 margin-bottom: 2rem;
-                height: 30vh;
+                height: 26vh;
             }
             .imgGroup {
                 &.direction0{
@@ -186,20 +183,26 @@ svg{
                         height: calc(100% - 4em);
                     }
                     p{
-                        font-size: 2em;
+                        font-size: 1.9em;
                         >span{
-                            font-size: 1em;
+                            font-size: 0.9em;
                         }
+                    }
+                }
+                p{
+                    font-size: 1em;
+                    >span{
+                        font-size: 0.6em;
                     }
                 }
             }
             .textGroup{
-                font-size: 22px;
                 width: 92%;
-                line-height: 1.8;
+                font-size: 1.8em;
+                margin: 2em auto;
+
             }
             .subTextGroup{
-                font-size: 16px;
                 width: 92%;
                 margin: 1em auto 3em auto;;
             }
@@ -220,12 +223,14 @@ svg{
         width: 90vw;
         max-width: 60rem;
         margin: 0 auto;
+        font-size: 16px;
         .modal-header {
             >*{
                 font-size: 1em;
             }
             .closeBtn{
                 top: .5em;
+                right: 1em;
                 font-size: 1.25em;
             }
         }
@@ -283,19 +288,22 @@ svg{
                         margin: 0 auto 1rem auto;
                     }
                 }
-                >p{
-                    margin: 0 auto 1rem auto;
-                    font-size: 16px;
+                p{
+                    font-size: 0.9em;
+                    >span{
+                        font-size: 0.6em;
+                    }
                 }
             }
             .textGroup{
                 width: 92%;
+                max-width: 36em;
                 padding: 1em 0;
-                font-size: 16px;
-                line-height: 1.8;
+                font-size: 0.9em;
+                margin: 1em auto;
             }
             .subTextGroup{
-                font-size: 14px;
+                max-width: 36em;
                 width: 92%;
                 margin: 2em auto 4em auto;;
             }
