@@ -10,7 +10,6 @@
                 <img v-if="isMobileWidth()" :src="require('./assets/mobile_little_map.svg')">
                 <img v-else :src="require('./assets/little_map.svg')">
             </div>
-
             <div class="mainMap">        
                 <svg v-if="isMobileWidth()" version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1242 2208"
@@ -3562,7 +3561,7 @@
                                     M790.3-45.5L790.3-45.5L790.3-45.5z"/>
                             </g>
                         </g>
-                        <g @click="openDialog(1)" class="svgBtn"> 
+                        <g @click="openDialog(1)" v-tooltip.top-center="tootip[0]" class="svgBtn"> 
                             <rect x="1394.1" y="271.7" class="st2" width="134.6" height="45"/>
                             <path d="M1529,316.9h-135.1v-45.5H1529V316.9z M1394.4,316.4h134.1v-44.5h-134.1V316.4z"/>
                         </g>
@@ -3624,7 +3623,7 @@
                                 C1505.4,283.1,1505.5,283,1505.6,283z M1512,291.3v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1512z M1507.5,291.7v2.3h4.5v-2.3
                                 H1507.5z M1512,296.8v-2.4h-4.5v2.4H1512z"/>
                         </g>
-                        <g @click="openDialog(5)" class="svgBtn">
+                        <g @click="openDialog(5)" v-tooltip.top-center="tootip[4]" class="svgBtn">
                             <rect x="1257.6" y="366.6" class="st2" width="134.6" height="45"/>
                             <path d="M1392.4,411.8h-135.1v-45.5h135.1V411.8z M1257.8,411.3h134.1v-44.5h-134.1V411.3z"/>
                         </g>
@@ -3672,7 +3671,7 @@
                                 C1368.9,378.1,1369,377.9,1369.1,377.9z M1375.4,386.2v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1375.4z M1371,386.6v2.3h4.5v-2.3
                                 H1371z M1375.4,391.7v-2.4h-4.5v2.4H1375.4z"/>
                         </g>
-                        <g @click="openDialog(2)" class="svgBtn">
+                        <g @click="openDialog(2)" v-tooltip.top-center="tootip[1]" class="svgBtn">
                             <rect x="1552.3" y="546.4" class="st2" width="134.6" height="45"/>
                             <path d="M1687.2,591.6h-135.1v-45.5h135.1V591.6z M1552.6,591.1h134.1v-44.5h-134.1V591.1z"/>
                         </g>
@@ -3728,7 +3727,7 @@
                                 C1651.6,557.9,1651.7,557.8,1651.9,557.8z M1658.2,566v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1658.2z M1653.7,566.4v2.3h4.5v-2.3
                                 H1653.7z M1658.2,571.5v-2.4h-4.5v2.4H1658.2z"/>
                         </g>
-                        <g @click="openDialog(6)" class="svgBtn">
+                        <g @click="openDialog(6)" v-tooltip.top-center="tootip[5]" class="svgBtn">
                             <rect x="1394.1" y="569.7" class="st2" width="134.6" height="45"/>
                             <path d="M1529,615h-135.1v-45.5H1529V615z M1394.4,614.5h134.1V570h-134.1V614.5z"/>
                         </g>
@@ -3802,7 +3801,7 @@
                                 C1505.4,581.2,1505.5,581.1,1505.6,581.1z M1512,589.4v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1512z M1507.5,589.8v2.3h4.5v-2.3
                                 H1507.5z M1512,594.8v-2.4h-4.5v2.4H1512z"/>
                         </g>
-                        <g @click="openDialog(3)" class="svgBtn">
+                        <g @click="openDialog(3)" v-tooltip.top-center="tootip[2]" class="svgBtn">
                             <rect x="996.1" y="714.6" class="st2" width="134.6" height="45"/>
                             <path d="M1131,759.8H995.9v-45.5H1131V759.8z M996.4,759.3h134.1v-44.5H996.4V759.3z"/>
                         </g>
@@ -3852,7 +3851,7 @@
                                 C1095.4,726.1,1095.5,726,1095.7,726z M1102,734.2v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1102z M1097.5,734.6v2.3h4.5v-2.3
                                 H1097.5z M1102,739.7v-2.4h-4.5v2.4H1102z"/>
                         </g>
-                        <g @click="openDialog(8)" class="svgBtn">
+                        <g @click="openDialog(8)" v-tooltip.bottom="tootip[7]" class="svgBtn">
                             <rect x="1091.2" y="782.9" class="st2" width="188.2" height="45"/>
                             <path d="M1279.6,828.1H1091v-45.5h188.7V828.1z M1091.5,827.6h187.7v-44.5h-187.7V827.6z"/>
                         </g>
@@ -3952,7 +3951,7 @@
                                 C1254.9,794.4,1255,794.2,1255.2,794.2z M1261.5,802.5v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1261.5z M1257,802.9v2.3h4.5v-2.3
                                 H1257z M1261.5,808v-2.4h-4.5v2.4H1261.5z"/>
                         </g>
-                        <g @click="openDialog(4)" class="svgBtn">
+                        <g @click="openDialog(4)" v-tooltip.top-center="tootip[3]" class="svgBtn">
                             <rect x="912.8" y="624.7" class="st2" width="134.6" height="45"/>
                             <path d="M1047.7,669.9H912.6v-45.5h135.1V669.9z M913.1,669.4h134.1V625H913.1V669.4z"/>
                         </g>
@@ -4016,7 +4015,7 @@
                                 C1024.2,636.2,1024.3,636,1024.4,636z M1030.7,644.3v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H1030.7z M1026.2,644.7v2.3h4.5v-2.3
                                 H1026.2z M1030.7,649.8v-2.4h-4.5v2.4H1030.7z"/>
                         </g>
-                        <g @click="openDialog(11)" class="svgBtn">
+                        <g @click="openDialog(11)" v-tooltip.top-center="tootip[10]" class="svgBtn">
                             <rect x="1011.1" y="436.5" class="st2" width="134.6" height="45"/>
                             <path d="M1146,481.7h-135.1v-45.5H1146V481.7z M1011.3,481.2h134.1v-44.5h-134.1V481.2z"/>
                         </g>
@@ -4513,7 +4512,7 @@
                                 c1.8-0.2,3.6-0.3,5.3-0.5l0.1-3.7c0-2-0.1-3.2-0.3-3.7c-0.1-0.2-0.1-0.5-0.1-0.7c0-0.2,0.2-0.3,0.4-0.3c0.5,0,1.3,0.3,2.2,0.7
                                 c0.5,0.3,0.9,0.7,0.9,1c0,0.2-0.1,0.5-0.2,0.8c-0.2,0.4-0.3,1.3-0.3,2.9L1210.1,752z"/>
                         </g>
-                        <g @click="openDialog(10)" class="svgBtn">
+                        <g @click="openDialog(10)" v-tooltip.bottom="tootip[9]" class="svgBtn">
                             <rect x="271.7" y="782.9" class="st2" width="134.6" height="45"/>
                             <path d="M406.6,828.1H271.5v-45.5h135.1V828.1z M272,827.6h134.1v-44.5H272V827.6z"/>
                         </g>
@@ -4585,7 +4584,7 @@
                                 c-0.2-1-0.5-1.8-1.2-2.2C383,794.4,383.1,794.2,383.3,794.2z M389.6,802.5v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H389.6z
                                 M385.1,802.9v2.3h4.5v-2.3H385.1z M389.6,808v-2.4h-4.5v2.4H389.6z"/>
                         </g>
-                        <g @click="openDialog(9)" class="svgBtn">
+                        <g @click="openDialog(9)" v-tooltip.top-center="tootip[8]" class="svgBtn">
                             <rect x="743" y="703" class="st2" width="134.6" height="45"/>
                             <path d="M877.9,748.2H742.7v-45.5h135.1V748.2z M743.2,747.7h134.1v-44.5H743.2V747.7z"/>
                         </g>
@@ -4654,7 +4653,7 @@
                                 c-0.2-1-0.5-1.8-1.2-2.2C854.3,714.4,854.4,714.3,854.5,714.3z M860.9,722.6v-2h-4.1c-0.1,0.1-0.2,0.2-0.3,0.2v1.8H860.9z
                                 M856.4,723v2.3h4.5V723H856.4z M860.9,728.1v-2.4h-4.5v2.4H860.9z"/>
                         </g>
-                        <g @click="openDialog(7)" class="svgBtn">
+                        <g @click="openDialog(7)" v-tooltip.top-center="tootip[6]" class="svgBtn">
                             <rect x="356.6" y="634.7" class="st2" width="134.6" height="90.8"/>
                             <path d="M491.5,725.7H356.4v-91.3h135.1V725.7z M356.9,725.2H491v-90.3H356.9V725.2z"/>
                         </g>
@@ -4814,7 +4813,20 @@ export default {
             showModal: false,
             dialogType: '',
             windowWidth: 0,
-            rwdClass:''
+            rwdClass:'',
+            tootip:[
+                '長度：約1.98Km  難度：中等',
+                '長度：約8.6Km  難度：中 - 難',
+                '長度：約2.5Km  難度：中等',
+                '長度：約3Km  難度：中等',
+                '長度：約3.5Km  難度：中 - 難',
+                '長度：約4.2Km  難度：簡單',
+                '長度：約9.9Km  難度：中 - 難',
+                '長度：約4.2Km  難度：中等',
+                '長度：約4.9Km  難度：簡單',
+                '長度：約2.2Km  難度：簡單',
+                '長度：約3.1Km  難度：簡單'
+            ]
         }
     },
     mounted() {
