@@ -110,7 +110,7 @@ button{
 .tooltip {
     display: block !important;
     z-index: 10000;
-  
+
     .tooltip-inner {
       background: rgba(white,0.9);
       color: $blackolor;
@@ -118,7 +118,7 @@ button{
       padding: 5px 10px 4px;
       font-size: 0.8em;
     }
-  
+
     .tooltip-arrow {
       width: 0;
       height: 0;
@@ -127,7 +127,7 @@ button{
       margin: 5px;
       border-color: rgba(white,0.9);
     }
-  
+
     &[x-placement^="top"] {
       margin-bottom: 1.75em;
   
@@ -145,7 +145,7 @@ button{
 
     &[x-placement^="bottom"] {
         margin-top: 0.75em;
-    
+
         .tooltip-arrow {
           border-width: 0 5px 5px 5px;
           border-left-color: transparent !important;
@@ -163,10 +163,42 @@ button{
       opacity: 0;
       transition: opacity .15s, visibility .15s;
     }
-  
+
     &[aria-hidden='false'] {
       visibility: visible;
       opacity: 1;
       transition: opacity .15s;
     }
   }
+
+  .infoText{
+    position: absolute;
+    border: 1px solid rgba($whiteColor, 0.5);
+    z-index: 2;
+    line-height: 1.6;
+    p{
+        text-indent:2em;
+    }
+}
+.sm{
+    .infoText{
+        width: 50%;
+        left: 0.5em;
+        bottom: 0.5em;
+        padding: 0.25em;
+        p{
+            font-size: 0.6em;
+        }
+    }
+}
+.lg{
+    .infoText{
+        width: 16em;
+        left: 1em;
+        bottom: 1em;
+        padding: 0.75em;
+        p{
+            font-size: 0.8em;
+        }
+    }
+}
